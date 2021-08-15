@@ -1,0 +1,35 @@
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Ajouter une nouvelle véhicule</h6>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="add" (ngSubmit)="save()" >
+                
+                <div class="form-group">
+                    <label for="">Model</label>
+                    <select class="form-control"  formControlName="model_id">
+                        <option [value]="m.id" *ngFor="let m of models">{{m.model}}</option>
+                    </select>
+                </div>
+                
+                
+                <div class="form-group">
+                    <label for="">ps</label>
+                    <input type="number" class="form-control" formControlName="ps">
+                </div>
+                <div class="form-group">
+                    <label for="">matricule</label>
+                    <input type="text" class="form-control" formControlName="matricule">
+                </div>
+                
+
+                
+
+                <div class="form-group mt-2">
+                    <button class="btn btn-primary" type="submit" [disabled]="! add.valid">Ajouter</button>
+                </div>
+                
+            </form>
+        </div>
+    </div>

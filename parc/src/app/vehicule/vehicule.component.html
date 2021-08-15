@@ -1,0 +1,78 @@
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">{{status}}</h6>
+        </div>
+        <div class="card-body">
+           <div *ngIf="vehicule != null">
+                <ul>
+                    <li>Model : {{vehicule.model.model}} </li>
+                    <li>Mark : {{vehicule.model.mark.mark}} </li>
+                    <li>PS : {{vehicule.ps}} ch</li>
+                    
+                    
+                </ul>
+
+
+
+                <h3>Ajouter une intervention:</h3>
+                <hr>
+
+                <form [formGroup]="add" (ngSubmit)="saveIntervention()">
+                    <div class="form-group">
+                        <label for="">Description</label>
+                        <input type="text" class="form-control" formControlName="description">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Amount</label>
+                        <input type="number" class="form-control" formControlName="amount">
+                    </div>
+                    <div class="form-group">
+                        <label for="">Date</label>
+                        <input type="date" class="form-control" formControlName="date_user">
+                    </div>
+                    
+                    <div class="form-group mt-2">
+                        <button class="btn btn-primary" type="submit" [disabled]="! add.valid">Ajouter</button>
+                    </div>
+                </form>
+
+
+
+                <h3>Interventions:</h3>
+                <hr>
+
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Description</th>
+                            <th>Amount</th>
+                            
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let i of vehicule.interventions">
+                            <td>
+                                {{i.id}}
+                            </td>
+                            <td>
+                                {{i.description}}
+                            </td>
+                            <td>
+                                {{i.amount | currency}}
+                            </td>
+                            
+                            <td>
+                                {{i.date_user | date}}
+                            </td>
+                            
+                        </tr>
+
+                    </tbody>
+
+                </table>
+           </div>
+        </div>
+    </div>
