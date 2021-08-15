@@ -1,0 +1,26 @@
+<div class="container mt-5">
+    <h1>List of articles</h1>
+
+
+    <!--
+  @Input() title:string;
+  @Input() content:string;
+  @Input() likes:number;
+  @Input() comments:number;
+  @Input() id:string;
+
+    -->
+    <app-article-preview 
+    
+    title="{{a.title}}"
+    content="{{a.content}}"
+    likes="{{a.likes}}"
+    [comments]="a.comments"
+    id="{{a.id}}"
+    
+    
+    
+    *ngFor="let a of articles"></app-article-preview>
+    
+
+</div>

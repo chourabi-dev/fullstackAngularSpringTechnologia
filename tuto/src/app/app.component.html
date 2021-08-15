@@ -1,0 +1,169 @@
+ 
+
+<!--<img [src]="photoURL[selectedIndex]" width="100%" />
+
+
+<h3>Fruits are good for health : {{ arrayOfFruits.length }} fruit(s) </h3>
+<ul>
+  
+  
+  <li *ngFor="   let fruit of arrayOfFruits   " >
+    <h3>{{ fruit.name }}   <span *ngIf="fruit.isOld == true " >*</span>   </h3>
+    <p> <small> Quantity : {{fruit.quantity}} </small> </p>
+  </li>
+ 
+</ul>-->
+
+
+
+<!--<p  [innerHTML]="content"  ></p>-->
+<!--
+<p   [style.color]=" isRed == true ? 'red' : 'blue' "   >
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt iure quidem autem nam laudantium. Sunt similique pariatur fugit ab modi sequi? Deserunt repellat voluptatem tenetur, enim tempore est? Laudantium, mollitia.
+</p>
+
+
+<button [disabled]=" ! canBeClicked " > CLICK ME  </button>-->
+
+
+<!--
+<h1> {{ custromForm.valid }} </h1>
+
+<form [formGroup]="custromForm" (ngSubmit)="validateForm()" >
+
+
+  <label >Fullname   <span *ngIf="custromForm.controls.fullname.valid == false" style="color: red;">*</span>  </label><br>
+  <input type="text" 
+  placeholder="put your name please" 
+  formControlName="fullname"   > <br>
+  
+
+  <label >Email <span *ngIf="custromForm.controls.email.valid == false" style="color: red;">*</span></label><br>
+  <input type="email" 
+  placeholder="put your email please" 
+  formControlName="email"  ><br>
+  
+
+  <label >Password  <span *ngIf="custromForm.controls.password.valid == false" style="color: red;">*</span></label><br>
+  <input type="password" 
+  placeholder="put your password please" 
+  formControlName="password"  ><br>
+  
+
+  <section formGroupName="address">
+    <label >City  <span *ngIf="custromForm.controls.address.value.city == '' " style="color: red;">*</span></label><br>
+    <input type="text" 
+    placeholder="put your city please" 
+    formControlName="city"  ><br>
+
+    <label >zipCode  <span *ngIf="custromForm.controls.address.value.zipCode == '' " style="color: red;">*</span></label><br>
+    <input type="text" 
+    placeholder="put your city please" 
+    formControlName="zipCode"  ><br>
+
+    <label >state  <span *ngIf="custromForm.controls.address.value.state == '' " style="color: red;">*</span></label><br>
+    <input type="text" 
+    placeholder="put your city please" 
+    formControlName="state"  ><br>
+
+    
+
+  </section>
+
+
+
+
+
+  
+  <button [disabled]=" ! custromForm.valid" type="submit"> validate</button>
+
+</form>-->
+
+<!--
+
+<form [formGroup]="formOne" *ngIf="step == 0">
+
+  <label for="">Username</label><br>
+  <input type="text" name="" id="" formControlName="username"><br>
+
+
+  <label for="">Email</label><br>
+  <input type="text" name="" formControlName="email"><br>
+ 
+  <button [disabled]="! formOne.valid "  type="button" (click)="next()" >NEXT</button>
+  
+
+</form>
+
+<form [formGroup]="formTwo" *ngIf="step == 1">
+
+  <label for="">Phone number</label><br>
+  <input type="text" name="" id="" formControlName="phoneNumber"><br>
+
+
+  <label for="">address</label><br>
+  <input type="text" name="" formControlName="address"><br>
+ 
+  <button type="button" (click)="saveUser()">SAVE</button>
+  
+
+</form>
+
+
+<ul>
+  <li *ngFor="let u of users">
+    <p>
+      <strong> {{u.personalInformation.username}} / {{u.personalInformation.email}} </strong> <br> 
+      <small> {{u.contactInfomation.phoneNumber}} - {{u.contactInfomation.address}} </small>
+    </p>
+  </li>
+</ul>
+
+-->
+
+
+
+
+<!--
+<input type="text" (keyup)="searching($event)" >
+<ul>
+
+  <li *ngFor="let u of usersFilterd">
+     <p>
+       <strong>{{  u.name | uppercase }}</strong><br>
+       {{u.phonenumber}}
+     </p>
+  </li>
+</ul>
+
+-->
+
+
+<!--<h1> {{val | currency:'TND' }} </h1>-->
+
+<!--<h1> {{val | titlecase }} </h1>-->
+
+<!-- <h1> {{ val | date:'medium' }} </h1> -->
+<!-- 
+<h1> {{ val | deletewhitespace }} </h1>
+
+<h1> email : {{ email | hideemail }} </h1>-->
+
+
+<!-- 
+<input [(ngModel)]="val" type="text"  >
+
+<button (click)="checkInputVal()">check</button>-->
+
+
+<!-- new comps -->
+
+
+
+
+<!--
+<app-navbar  ></app-navbar>
+
+<router-outlet></router-outlet>
+-->
+<app-newtypes></app-newtypes>

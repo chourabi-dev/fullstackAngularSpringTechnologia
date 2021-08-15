@@ -1,0 +1,33 @@
+<div class="card mt-2">
+    <div class="card-body">
+        <h3>{{title}}</h3>
+        <p>
+            {{content}}
+        </p>
+
+        <div class="row">
+            <div class="col-4">
+                <button class="btn btn-outline-primary"> {{likes}} jaime</button>
+            </div>
+            <div class="col-4">
+                <button class="btn btn-outline-secondary" (click)="openAllComments()"> {{comments.length}} {{ commentsIsOpned == false ? 'Show all comments':'hide comments'  }}</button>
+            </div>
+            <div class="col-4">
+                <a class="btn btn-outline-warning" [routerLink]="   '/details/'+id  "> see more</a>
+            </div>
+            
+            
+        </div>
+
+        <div *ngIf=" commentsIsOpned == true " class="row">
+            <ul>
+                <li *ngFor="let c of comments">
+                    <p>
+                        <strong> {{c.text}} </strong><br>
+                        <small> {{ c.date | date:'medium' }} </small>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
