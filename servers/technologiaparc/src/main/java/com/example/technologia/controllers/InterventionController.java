@@ -3,6 +3,7 @@ package com.example.technologia.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,6 +19,7 @@ import com.example.technologia.repositories.VehiculesRepository;
 
 @RestController
 @RequestMapping("/Interventions")
+@CrossOrigin(origins = "*")
 public class InterventionController {
 
 	
@@ -46,9 +48,11 @@ public class InterventionController {
 			
 			in.setDate_user(i.getDate_user());
 			
+			this.ir.save(in);
+			
 			
 		}catch(Exception e) {
-			
+			System.out.print(e.getMessage());
 		}
 		
 	}

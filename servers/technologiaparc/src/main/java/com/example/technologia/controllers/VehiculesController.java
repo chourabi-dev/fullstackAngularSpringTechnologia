@@ -3,7 +3,9 @@ package com.example.technologia.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +19,7 @@ import com.example.technologia.repositories.VehiculesRepository;
 
 @RestController
 @RequestMapping("/vehicules")
+@CrossOrigin(origins = "*")
 public class VehiculesController {
 	
 	@Autowired
@@ -25,11 +28,16 @@ public class VehiculesController {
 	@Autowired
 	private ClientsRepository cr;
 	
-	@GetMapping("/VehiculeAddModel")
+	
+	@GetMapping("/list")
 	List<Vehicule> getAll(){
 		return this.vr.findAll();
 	}
-	
+
+	@GetMapping("/details/{id}")
+	Vehicule getAll(@PathVariable long id){
+		return this.vr.findById(id).get();
+	}
 	
 	@Autowired
 	private ModelRepository mr;
